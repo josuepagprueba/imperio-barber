@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Imperio Barber: demostración de una barbería premium, cortes y reservas.">
+<title>Imperio Barber | Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d6ad48;--ink:#0b0b0b;--card:#1b1b1b;--text:#f7f4eb;--muted:#b9b4a9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--text);font-family:Montserrat,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}h1,h2,h3{font-family:'Playfair Display',Georgia,serif}section{scroll-margin-top:90px}.wrap{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#0b0b0bf2;border-bottom:1px solid #45391f}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;letter-spacing:2px;font-size:21px;color:var(--gold)}.brand span{color:white;font-weight:400}.links{display:flex;gap:26px}.links a{font-size:12px;font-weight:700;transition:color .2s}.links a:hover,.links a:focus-visible{color:var(--gold)}.menu{display:none;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:9px 13px;border-radius:4px;cursor:pointer}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;background:linear-gradient(#0009,#000d),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=80') center/cover}.hero-inner{padding:90px 0;max-width:900px}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(45px,8vw,94px);line-height:1.08;margin:22px 0}.gold{color:var(--gold)}.hero p{max-width:650px;margin:0 auto 32px;color:#e0ded9;line-height:1.8}.btn{display:inline-block;padding:16px 25px;border:1px solid var(--gold);background:var(--gold);color:#15120b;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:transform .25s,background .25s}.btn:hover{transform:translateY(-3px);background:#f0cf7a}.btn:focus-visible,.menu:focus-visible,a:focus-visible{outline:3px solid white;outline-offset:4px}
+.block{padding:85px 0}.heading{text-align:center;margin-bottom:38px}.heading h2{font-size:clamp(30px,5vw,48px);margin:12px 0}.heading p{color:var(--muted);line-height:1.7}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service{background:var(--card);padding:35px 24px;border:1px solid #35312b;text-align:center;border-radius:7px;transition:transform .25s,border-color .25s}.service:hover{transform:translateY(-6px);border-color:var(--gold)}.service .symbol{font-size:34px}.service h3{font-size:24px}.service p{color:var(--muted);line-height:1.7;min-height:55px}.price{color:var(--gold);font-size:28px;font-weight:800}
+.gallery{background:#121212}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.photos figure{margin:0;overflow:hidden;border-radius:6px;position:relative;background:#252525}.photos img{width:100%;height:280px;object-fit:cover;transition:transform .45s}.photos figure:hover img{transform:scale(1.06)}.photos figcaption{position:absolute;bottom:0;left:0;right:0;padding:28px 14px 13px;background:linear-gradient(transparent,#000d);font-weight:700;font-size:13px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about img{width:100%;height:400px;object-fit:cover;border:2px solid var(--gold);border-radius:5px}.about h2{font-size:clamp(32px,4vw,45px)}.about p{color:var(--muted);line-height:1.9}.contact{text-align:center;background:radial-gradient(ellipse at center,#302714,#0b0b0b 75%)}.contact h2{font-size:clamp(32px,5vw,55px)}.contact p{color:var(--muted);line-height:1.8}footer{text-align:center;padding:30px 15px;border-top:1px solid #43351c;color:#aaa;font-size:13px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){.nav{min-height:70px;flex-wrap:wrap}.brand{font-size:17px}.menu{display:block}.links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding-bottom:15px}.links.open{display:flex}.links a{padding:13px 5px;border-top:1px solid #333}.grid,.photos,.about{grid-template-columns:1fr}.photos img{height:240px}.block{padding:65px 0}.hero{min-height:70vh}.about img{height:300px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#inicio">IMPERIO <span>BARBER</span></a><button class="menu" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">☰ Menú</button><nav class="links" id="navLinks" aria-label="Menú principal"><a href="#inicio">INICIO</a><a href="#servicios">SERVICIOS</a><a href="#galeria">GALERÍA</a><a href="#nosotros">NOSOTROS</a><a href="#contacto">CONTACTO</a></nav></div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-inner"><span class="eyebrow">Estilo · Elegancia · Precisión</span><h1>EL ARTE DE <span class="gold">DESTACAR</span></h1><p>Más que un corte de cabello: una experiencia para quienes valoran los detalles y su propio estilo.</p><a class="btn" href="#contacto">RESERVAR MI CITA</a></div></section>
+<section class="block" id="servicios"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Nuestra especialidad</span><h2>Servicios <span class="gold">Premium</span></h2><p>Una experiencia diseñada para cada estilo.</p></div><div class="grid"><article class="service reveal"><div class="symbol" aria-hidden="true">✂️</div><h3>Corte clásico</h3><p>Acabado limpio, elegante y preciso.</p><div class="price">Q50</div></article><article class="service reveal"><div class="symbol" aria-hidden="true">💈</div><h3>Degradado</h3><p>Transiciones modernas con atención al detalle.</p><div class="price">Q65</div></article><article class="service reveal"><div class="symbol" aria-hidden="true">👑</div><h3>Corte + barba</h3><p>El servicio completo para renovar tu estilo.</p><div class="price">Q90</div></article></div></div></section>
+<section class="block gallery" id="galeria"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Inspiración</span><h2>Nuestra <span class="gold">Galería</span></h2><p>Fotografías ilustrativas para esta demostración.</p></div><div class="photos"><figure class="reveal"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80" alt="Barbero trabajando en un corte de cabello" loading="lazy"><figcaption>Precisión</figcaption></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80" alt="Herramientas de barbería" loading="lazy"><figcaption>Tradición</figcaption></figure><figure class="reveal"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80" alt="Interior y ambiente de barbería" loading="lazy"><figcaption>Estilo</figcaption></figure></div></div></section>
+<section class="block" id="nosotros"><div class="wrap about"><img class="reveal" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=80" alt="Equipo de barbería sobre una mesa" loading="lazy"><div class="reveal"><span class="eyebrow">Nuestra filosofía</span><h2>La elegancia está en los <span class="gold">detalles.</span></h2><p>Imperio Barber es un concepto de barbería premium que combina técnicas clásicas, tendencias modernas y atención personalizada.</p><p>Este sitio es una demostración: nombre, precios y servicios son ejemplos editables para un futuro cliente.</p><a class="btn" href="#contacto">CONSULTAR CITA</a></div></div></section>
+<section class="block contact" id="contacto"><div class="wrap reveal"><span class="eyebrow">Tu próximo estilo comienza aquí</span><h2>¿LISTO PARA <span class="gold">DESTACAR?</span></h2><p>Consultá horarios y disponibilidad por WhatsApp.</p><button class="btn" type="button" id="whatsappButton">RESERVAR POR WHATSAPP</button></div></section>
+</main>
+<footer><p><strong>IMPERIO BARBER</strong> © 2026</p><p>Sitio de demostración · Fotografías ilustrativas</p></footer>
+<script>
+// Colocá aquí el número autorizado del negocio, con código de país,
+// solo dígitos. Ejemplo ficticio de formato: 502XXXXXXXX.
+const whatsapp = "";
+const menuButton = document.getElementById('menuButton');
+const navLinks = document.getElementById('navLinks');
+menuButton.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+});
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Abrir menú');
+}));
+document.getElementById('whatsappButton').addEventListener('click', () => {
+  if (!/^\d{8,15}$/.test(whatsapp)) {
+    alert('Demostración: configuraremos aquí el WhatsApp autorizado del negocio.');
+    return;
+  }
+  const message = encodeURIComponent('Hola, quisiera consultar disponibilidad para reservar una cita.');
+  window.open(`https://wa.me/${whatsapp}?text=${message}`, '_blank', 'noopener,noreferrer');
+});
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+</script>
+</body>
+</html>
